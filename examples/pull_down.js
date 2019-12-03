@@ -21,7 +21,7 @@ tca.pinMode(11, tca.INPUT_PULLUP);
 tca.pinMode(12, tca.INPUT_PULLUP);
 tca.pinMode(13, tca.INPUT_PULLUP);
 tca.pinMode(14, tca.INPUT_PULLUP);
-tca.pinMode(15, tca.INPUT); // this one should float from time to time
+tca.pinMode(15, tca.OUTPUT); // this one should float from time to time
 
 setInterval(function(){
 
@@ -36,3 +36,6 @@ var test = function(i){
 for (var i = 8; i < 16; i++) {
   tca.digitalRead(i, test(i));
 }
+
+
+var tca = new TCA6416A({address: 0x21, device: 1, debug: false });
