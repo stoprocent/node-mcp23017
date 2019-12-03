@@ -1,12 +1,12 @@
 {
-  "name": "node-mcp23017",
-  "version": "0.0.4",
-  "description": "Library to use the MCP23017 16bit I/O Expander with the Raspberry Pi",
+  "name": "node-tca6416a",
+  "version": "0.0.1",
+  "description": "Library to use the TCA6416A 16bit I/O Expander with the Raspberry Pi",
   "main": "main.js",
-  "author": "Kai Henzler",
+  "author": "Marek Serafin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaihenzler/node-mcp23017"
+    "url": "https://github.com/stoprocent/node-tca6416a"
   },
   "license": "MIT",
   "dependencies": {

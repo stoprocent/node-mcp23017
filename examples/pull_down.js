@@ -1,27 +1,27 @@
-var MCP23017 = require('node-mcp23017');
+var TCA6416A = require('node-tca6416a');
 
-var mcp = new MCP23017({
+var tca = new TCA6416A({
   address: 0x20, //all address pins pulled low
   device: '/dev/i2c-1', // Model B
   debug: false
 });
 
-mcp.pinMode(0, mcp.INPUT_PULLUP);
-mcp.pinMode(1, mcp.INPUT_PULLUP);
-mcp.pinMode(2, mcp.INPUT_PULLUP);
-mcp.pinMode(3, mcp.INPUT_PULLUP);
-mcp.pinMode(4, mcp.INPUT_PULLUP);
-mcp.pinMode(5, mcp.INPUT_PULLUP);
-mcp.pinMode(6, mcp.INPUT_PULLUP);
-mcp.pinMode(7, mcp.INPUT_PULLUP);
-mcp.pinMode(8, mcp.INPUT_PULLUP);
-mcp.pinMode(9, mcp.INPUT_PULLUP);
-mcp.pinMode(10, mcp.INPUT_PULLUP);
-mcp.pinMode(11, mcp.INPUT_PULLUP);
-mcp.pinMode(12, mcp.INPUT_PULLUP);
-mcp.pinMode(13, mcp.INPUT_PULLUP);
-mcp.pinMode(14, mcp.INPUT_PULLUP);
-mcp.pinMode(15, mcp.INPUT); // this one should float from time to time
+tca.pinMode(0, tca.INPUT_PULLUP);
+tca.pinMode(1, tca.INPUT_PULLUP);
+tca.pinMode(2, tca.INPUT_PULLUP);
+tca.pinMode(3, tca.INPUT_PULLUP);
+tca.pinMode(4, tca.INPUT_PULLUP);
+tca.pinMode(5, tca.INPUT_PULLUP);
+tca.pinMode(6, tca.INPUT_PULLUP);
+tca.pinMode(7, tca.INPUT_PULLUP);
+tca.pinMode(8, tca.INPUT_PULLUP);
+tca.pinMode(9, tca.INPUT_PULLUP);
+tca.pinMode(10, tca.INPUT_PULLUP);
+tca.pinMode(11, tca.INPUT_PULLUP);
+tca.pinMode(12, tca.INPUT_PULLUP);
+tca.pinMode(13, tca.INPUT_PULLUP);
+tca.pinMode(14, tca.INPUT_PULLUP);
+tca.pinMode(15, tca.INPUT); // this one should float from time to time
 
 setInterval(function(){
 
@@ -34,5 +34,5 @@ var test = function(i){
 }
 
 for (var i = 8; i < 16; i++) {
-  mcp.digitalRead(i, test(i));
+  tca.digitalRead(i, test(i));
 }

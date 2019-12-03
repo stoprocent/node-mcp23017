@@ -1,13 +1,13 @@
-var MCP23017 = require('node-mcp23017');
+var TCA6416A = require('node-tca23017');
 
-var mcp = new MCP23017({
+var tca = new TCA6416A({
   address: 0x20, //all address pins pulled low
   device: '/dev/i2c-1', // Model B
   debug: false
 });
 
 /*
-  This function blinks 16 LED, each hooked up to an port of the MCP23017
+  This function blinks 16 LED, each hooked up to an port of the tca23017
 */
 var pin = 0;
 var max = 16;
@@ -19,10 +19,10 @@ var blink = function() {
   }
 
   if (state) {
-    mcp.digitalWrite(pin, mcp.LOW); //turn off the current LED
+    tca.digitalWrite(pin, tca.LOW); //turn off the current LED
     pin++; //increase counter
   } else {
-    mcp.digitalWrite(pin, mcp.HIGH); //turn on the current LED
+    tca.digitalWrite(pin, tca.HIGH); //turn on the current LED
     console.log('blinking pin', pin);
   }
   state = !state; //invert the state of this LED
@@ -30,7 +30,7 @@ var blink = function() {
 
 //define all gpios as outputs
 for (var i = 0; i < 16; i++) {
-  mcp.pinMode(i, mcp.OUTPUT);
+  tca.pinMode(i, tca.OUTPUT);
 }
 
 setInterval(blink, 100); //blink all LED's with a delay of 100ms

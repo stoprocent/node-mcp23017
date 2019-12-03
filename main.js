@@ -1,3 +1,3 @@
-var mcp23017 = require('./lib/mcp23017');
+var tca6416a = require('./lib/tca6416a');
 
-module.exports = mcp23017;
+module.exports = tca6416a;
